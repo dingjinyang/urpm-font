@@ -8,7 +8,8 @@ export default {
   FONT_LOGOUT(state) {
     state.token = "";
     state.info = {
-      roles: []
+      roles: [],
+      permissions: []
     };
   }
 };

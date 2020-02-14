@@ -10,7 +10,7 @@ import { getToken } from "../util/cookie";
 // axios.defaults.headers.post["Content-Type"] = "application/json";
 
 let config = {
-  baseURL: process.env.VUE_APP_BASEBRL,
+  baseURL: process.env.VUE_APP_APIURL,
   timeout: 60 * 1000, // Timeout
   headers: {
     "Content-Type": "application/json",
