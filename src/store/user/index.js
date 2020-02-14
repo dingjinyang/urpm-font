@@ -9,13 +9,15 @@ export default {
     info: {
       name: "",
       avatar: "",
-      roles: []
+      roles: [],
+      permissions: []
     }
   },
   mutations,
   actions,
   getters: {
     roles: state => state.info.roles,
-    avatar: state => state.info.avatar
+    avatar: state => state.info.avatar,
+    permissions: state => state.info.permissions
   }
 };

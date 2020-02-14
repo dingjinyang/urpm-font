@@ -85,8 +85,6 @@ export default {
           if (res.code === 200) {
             _this.loginLoading = false;
             _this.$router.replace("/");
-          } else {
-            console.error(res); // _this.snackbarShow(res.msg);
           }
         })
         .catch(({ msg }) => {

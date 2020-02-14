@@ -7,16 +7,16 @@
 yarn build
 
 # 停止已有容器
-docker stop $(docker ps -a |  grep "vuetify"  | awk '{print $1}')
+docker stop $(docker ps -a |  grep "urpmfont"  | awk '{print $1}')
 
 # 删除已有容器
-docker rm $(docker ps -a |  grep "vuetify"  | awk '{print $1}')
+docker rm $(docker ps -a |  grep "urpmfont"  | awk '{print $1}')
 
 # 删除已有镜像
-docker rmi $(docker images -a |  grep "vuetify"  | awk '{print $1}')
+docker rmi $(docker images -a |  grep "urpmfont"  | awk '{print $1}')
 
 # 创建docker镜像
-docker build . -t vuetify
+docker build . -t urpmfont
 
 # 运行docker
-docker run -d --name vuetify -p 8080:80 vuetify
+docker run -d --name urpmfont -p 8080:80 urpmfont

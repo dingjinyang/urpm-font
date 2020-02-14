@@ -19,3 +19,7 @@ export function login(data) {
 export function getUserInfo() {
   return _axios.get("/user/info");
 }
+
+export function getUserPermissions() {
+  return _axios.get(`/permission/user`);
+}
