@@ -8,7 +8,7 @@ module.exports = {
   devServer: {
     proxy: {
       "/api": {
-        target: "http://webplus.top:8088",
+        target: process.env.VUE_APP_APIURL,
         ws: true,
         changeOrigin: true,
         pathRewrite: {

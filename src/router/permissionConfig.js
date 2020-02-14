@@ -15,7 +15,7 @@ router.beforeEach(async (to, from, next) => {
       NProgress.done();
     } else {
       // 查看是否有角色信息
-      if (store.getters["user/userRole"].length > 0) {
+      if (store.getters["user/roles"].length > 0) {
         next();
       } else {
         // 不含有角色信息，获取用户信息

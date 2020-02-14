@@ -24,7 +24,7 @@
       <template v-slot:activator="{ on }">
         <v-btn icon large color="primary" dark v-on="on">
           <v-avatar size="32px" item>
-            <v-img :src="$store.getters[`user/userAvatar`]" alt="Vuetify" />
+            <v-img :src="$store.getters[`user/avatar`]" alt="Vuetify" />
           </v-avatar>
         </v-btn>
       </template>

@@ -21,12 +21,7 @@ export default {
       this.items = this.$route.matched.filter(item => item.name); //过滤不含有name属性的路由
     },
     permissionCheck(route) {
-      // console.log(
-      //   this.$store.getters["user/userRole"].some(
-      //     role => route.meta.roles && route.meta.roles.includes(role)
-      //   )
-      // );
-      return this.$store.getters["user/userRole"].some(
+      return this.$store.getters["user/roles"].some(
         role => route.meta.roles && route.meta.roles.includes(role)
       );
     }

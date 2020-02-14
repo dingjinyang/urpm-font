@@ -10,11 +10,11 @@ import { getToken } from "../util/cookie";
 // axios.defaults.headers.post["Content-Type"] = "application/json";
 
 let config = {
-  baseURL: process.env.VUE_APP_APIURL || process.env.apiUrl || "",
-  // timeout: 60 * 1000, // Timeout
+  baseURL: "/api",
+  timeout: 60 * 1000, // Timeout
   headers: {
     "Content-Type": "application/json",
-    Authorization: getToken()
+    Authorization: ""
   },
   withCredentials: true // Check cross-site Access-Control
 };
@@ -24,6 +24,7 @@ const _axios = axios.create(config);
 _axios.interceptors.request.use(
   function(config) {
     // Do something before request is sent
+    if (getToken()) config.headers.Authorization = getToken();
     if (process.env.NODE_ENV === "development") {
       console.log(config);
     }

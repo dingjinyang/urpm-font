@@ -39,8 +39,8 @@
                   :loading="loginLoading"
                   color="primary"
                   @click="userLogin"
-                  >Login</v-btn
-                >
+                  >Login
+                </v-btn>
               </v-card-actions>
             </v-card>
           </v-flex>
@@ -90,7 +90,7 @@ export default {
           }
         })
         .catch(({ msg }) => {
-          _this.snackbarShow(msg, "error");
+          if (!msg) _this.snackbarShow(msg, "error");
         })
         .finally(() => {
           _this.loginLoading = false;
