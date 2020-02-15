@@ -10,10 +10,10 @@
 
     <screen-full />
     <v-btn icon>
-      <svg-icon name="apps" />
-    </v-btn>
-    <v-btn icon>
       <svg-icon name="bell" />
+    </v-btn>
+    <v-btn icon @click="logout">
+      <svg-icon name="power" />
     </v-btn>
     <v-menu
       transition="slide-y-transition"
@@ -28,11 +28,6 @@
           </v-avatar>
         </v-btn>
       </template>
-      <v-list dense>
-        <v-list-item @click="logout">
-          <v-list-item-title>Logout</v-list-item-title>
-        </v-list-item>
-      </v-list>
     </v-menu>
   </v-app-bar>
 </template>

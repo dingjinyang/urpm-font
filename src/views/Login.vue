@@ -37,10 +37,32 @@
                 <v-spacer></v-spacer>
                 <v-btn
                   :loading="loginLoading"
-                  color="primary"
-                  @click="userLogin"
-                  >Login
+                  text
+                  color="error"
+                  @click="loginWith('root')"
+                  >root
                 </v-btn>
+                <v-btn
+                  :loading="loginLoading"
+                  text
+                  color="success"
+                  @click="loginWith('admin')"
+                  >admin
+                </v-btn>
+                <v-btn
+                  :loading="loginLoading"
+                  text
+                  color="primary"
+                  @click="loginWith('user')"
+                  >user
+                </v-btn>
+
+                <!--                <v-btn-->
+                <!--                  :loading="loginLoading"-->
+                <!--                  color="primary"-->
+                <!--                  @click="userLogin"-->
+                <!--                  >Login-->
+                <!--                </v-btn>-->
               </v-card-actions>
             </v-card>
           </v-flex>
@@ -100,6 +122,13 @@ export default {
         text,
         color
       };
+    },
+    loginWith(user) {
+      this.loginForm = {
+        account: user,
+        password: user
+      };
+      this.userLogin();
     }
   }
 };

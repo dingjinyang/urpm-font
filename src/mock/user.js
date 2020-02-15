@@ -57,7 +57,7 @@ export default {
       code: 200,
       meg: "success",
       data: {
-        "list|1-10": [
+        list: [
           {
             account: "@NAME",
             regTime: "@DATETIME",

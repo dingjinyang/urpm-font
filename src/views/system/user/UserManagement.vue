@@ -32,8 +32,14 @@
               </v-list>
               <v-card-actions>
                 <v-spacer />
-                <v-btn text color="success">Edit</v-btn>
-                <v-btn text color="error">Delete</v-btn>
+                <div>
+                  <v-btn v-perm="'user:update'" text color="success"
+                    >Edit</v-btn
+                  >
+                  <v-btn v-perm="'user:delete'" text color="error"
+                    >Delete</v-btn
+                  >
+                </div>
               </v-card-actions>
             </v-card>
           </v-col>
