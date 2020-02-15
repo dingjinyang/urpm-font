@@ -18,7 +18,7 @@ export default [
         meta: { title: "User", icon: "account-details", roles: [] },
         component: () =>
           import(
-            /* webpackChunkName: "Form" */ "@/views/system/user/UserManagement"
+            /* webpackChunkName: "Form" */ "@/views/system/UserManagement"
           )
       },
       {
@@ -27,7 +27,7 @@ export default [
         meta: { title: "Role", icon: "account-question", roles: [] },
         component: () =>
           import(
-            /* webpackChunkName: "Form" */ "@/views/system/role/RoleManagement"
+            /* webpackChunkName: "Form" */ "@/views/system/RoleManagement"
           )
       },
       {
@@ -36,7 +36,7 @@ export default [
         meta: { title: "Permission", icon: "shield-account", roles: [] },
         component: () =>
           import(
-            /* webpackChunkName: "Form" */ "@/views/system/permission/PermissionManagement"
+            /* webpackChunkName: "Form" */ "@/views/system/PermissionManagement"
           )
       }
     ]

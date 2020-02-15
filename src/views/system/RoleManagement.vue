@@ -18,13 +18,13 @@
           >
             <v-card>
               <v-card-title class="subheading">{{
-                item.username
+                item.name.toUpperCase()
               }}</v-card-title>
               <v-divider />
 
               <v-list dense>
                 <v-list-item v-for="(key, index) in keys" :key="index">
-                  <v-list-item-content>{{ key.text }}:</v-list-item-content>
+                  <v-list-item-content>{{ key.text }} :</v-list-item-content>
                   <v-list-item-content class="align-end">{{
                     item[key.value]
                   }}</v-list-item-content>
@@ -33,12 +33,12 @@
               <v-card-actions>
                 <v-spacer />
                 <div>
-                  <v-btn v-perm="'user:update'" text color="success"
-                    >Edit</v-btn
-                  >
-                  <v-btn v-perm="'user:delete'" text color="error"
-                    >Delete</v-btn
-                  >
+                  <v-btn v-perm="'role:update'" text color="success">
+                    Edit
+                  </v-btn>
+                  <v-btn v-perm="'role:delete'" text color="error">
+                    Delete
+                  </v-btn>
                 </div>
               </v-card-actions>
             </v-card>
@@ -109,10 +109,10 @@
 </template>
 
 <script>
-import { getAllUser } from "@/api/user";
+import { getAllRole } from "../../api/system";
 
 export default {
-  name: "UserManagement",
+  name: "RoleManagement",
   data() {
     return {
       search: "",
@@ -120,10 +120,7 @@ export default {
       page: 1,
       pages: 1,
       itemsPerPage: 3,
-      keys: [
-        { text: "Account", value: "account" },
-        { text: "Registe Time", value: "regTime" }
-      ],
+      keys: [{ text: "Name", value: "name" }],
       items: [],
       total: 0
     };
@@ -146,7 +143,7 @@ export default {
       this.getDate();
     },
     getDate(pageNum = this.page, pageSize = this.itemsPerPage) {
-      getAllUser(pageNum, pageSize)
+      getAllRole(pageNum, pageSize)
         .then(({ code, data: { list, total, pageNum, pageSize, pages } }) => {
           if (code !== 200) return;
           this.items = list;

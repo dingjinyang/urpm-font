@@ -8,13 +8,13 @@
     <v-content>
       <breadcrumbs class="ml-2" />
       <v-container fluid>
-        <v-scroll-x-transition mode="out-in">
-          <div class="ml-5">
+        <div class="ml-5">
+          <v-scroll-x-transition mode="out-in">
             <keep-alive>
               <router-view />
             </keep-alive>
-          </div>
-        </v-scroll-x-transition>
+          </v-scroll-x-transition>
+        </div>
       </v-container>
     </v-content>
   </v-app>
