@@ -1,6 +1,6 @@
 <template>
   <div class="breadcrumbs">
-    <v-breadcrumbs :items="items" large>
+    <v-breadcrumbs class="pb-0 mb-0" :items="items" large>
       <template v-slot:item="{ item }">
         <v-breadcrumbs-item exact :to="{ name: item.name }">
           {{ item.meta.title }}

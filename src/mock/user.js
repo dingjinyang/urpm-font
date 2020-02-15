@@ -26,7 +26,17 @@ export default {
   getUserInfo: Mock.mock("/user/info", {
     code: 200,
     data: {
-      roles: "@ROLES",
+      // roles: "@ROLES",
+      roles: ["admin"],
+      permissions: [
+        "role:insert",
+        "role:update",
+        "permission:select",
+        "user:select",
+        "user:update",
+        "user:insert",
+        "role:select"
+      ],
       name: "@NAME",
       avatar:
         // "https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif"
@@ -37,5 +47,28 @@ export default {
   logout: Mock.mock("/logout", {
     code: 200,
     meg: "logout success"
-  })
+  }),
+  /** 用户列表 */
+  userAll: Mock.mock(
+    /\/user\/all\?pageNum=[1-9]\d*&pageSize=[1-9]\d*/,
+    // "/user/all?pageNum=1&pageSize=10",
+    "get",
+    {
+      code: 200,
+      meg: "success",
+      data: {
+        "list|1-10": [
+          {
+            account: "@NAME",
+            regTime: "@DATETIME",
+            username: "@CNAME"
+          }
+        ],
+        pageNum: 1,
+        pageSize: 10,
+        total: 5,
+        pages: 1
+      }
+    }
+  )
 };

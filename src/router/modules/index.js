@@ -6,4 +6,5 @@
  */
 
 import template from "./template";
-export default [...template];
+import system from "./system";
+export default [...system, ...template];

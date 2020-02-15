@@ -1,6 +1,6 @@
 import Cookies from "js-cookie";
 
-const UserToken = "vuetify-admin-token";
+const UserToken = "urpm-font-token";
 
 export function getToken() {
   return Cookies.get(UserToken);

@@ -7,9 +7,13 @@
     <!--  内容区  -->
     <v-content>
       <breadcrumbs class="ml-2" />
-      <v-container fluid class="ml-5">
+      <v-container fluid>
         <v-scroll-x-transition mode="out-in">
-          <keep-alive> <router-view /></keep-alive>
+          <div class="ml-5">
+            <keep-alive>
+              <router-view />
+            </keep-alive>
+          </div>
         </v-scroll-x-transition>
       </v-container>
     </v-content>

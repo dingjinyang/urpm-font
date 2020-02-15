@@ -2,6 +2,7 @@
 node_modules
 /dist*
 /doc
+/http
 
 # local env files
 .env.local
@@ -21,3 +22,4 @@ yarn-error.log*
 *.sln
 *.sw?
 dist-urpm/
+http/

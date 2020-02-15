@@ -9,7 +9,7 @@ module.exports = {
   devServer: {
     proxy: {
       "/api": {
-        target: "http://localhost:8088",
+        target: "http://webplus.top:8088",
         ws: true,
         changeOrigin: true,
         pathRewrite: {

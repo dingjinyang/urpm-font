@@ -23,3 +23,7 @@ export function getUserInfo() {
 export function getUserPermissions() {
   return _axios.get(`/permission/user`);
 }
+
+export function getAllUser(pageNum = 1, pageSize = 10) {
+  return _axios.get(`/user/all`, { params: { pageNum, pageSize } });
+}

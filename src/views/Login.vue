@@ -87,8 +87,8 @@ export default {
             _this.$router.replace("/");
           }
         })
-        .catch(({ msg }) => {
-          if (!msg) _this.snackbarShow(msg, "error");
+        .catch(({ code, msg }) => {
+          if (code === 400) _this.snackbarShow(msg, "error");
         })
         .finally(() => {
           _this.loginLoading = false;
