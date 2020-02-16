@@ -4,7 +4,7 @@
 #set -e
 
 # 生成静态文件
-yarn build
+#yarn build
 
 # 停止已有容器
 docker stop $(docker ps -a |  grep "urpmfont"  | awk '{print $1}')

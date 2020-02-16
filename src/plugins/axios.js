@@ -2,7 +2,7 @@
 
 import Vue from "vue";
 import axios from "axios";
-import { getToken } from "../util/cookie";
+import { getToken, setToken } from "../util/cookie";
 
 // Full config:  https://github.com/axios/axios#request-config
 // axios.defaults.baseURL = process.env.baseURL || process.env.apiUrl || '';
@@ -40,6 +40,9 @@ _axios.interceptors.request.use(
 _axios.interceptors.response.use(
   function(response) {
     // Do something with response data
+    if (response.headers.authorization) {
+      setToken(response.headers.authorization);
+    }
     if (process.env.NODE_ENV === "development") {
       console.log(response);
     }
