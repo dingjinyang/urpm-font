@@ -7,7 +7,7 @@ import vuetify from "./plugins/vuetify";
 import "./router/permissionConfig";
 import api from "./api";
 import perm from "./directives/perm";
-// import "./mock";
+import "./mock";
 
 Vue.prototype.$api = api;
 Vue.config.productionTip = false;
